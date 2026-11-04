@@ -1,0 +1,72 @@
+
+name: Update DSA Progress
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-progress:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Update README progress
+        run: |
+          python3 <<'PY'
+          from pathlib import Path
+          import re
+
+          root = Path("LeetCode")
+          readme = Path("README.md")
+
+          counts = {"Easy": 0, "Medium": 0, "Hard": 0}
+
+          for problem_readme in root.glob("**/README.md"):
+              content = problem_readme.read_text(encoding="utf-8")
+              match = re.search(
+                  r"Difficulty:\s*(Easy|Medium|Hard)",
+                  content,
+                  re.IGNORECASE
+              )
+              if match:
+                  difficulty = match.group(1).capitalize()
+                  counts[difficulty] += 1
+
+          total = sum(counts.values())
+
+          text = readme.read_text(encoding="utf-8")
+          pattern = r"(?ms)^## Progress\s*\n.*?(?=^## |\Z)"
+
+          progress = (
+              "## Progress\n\n"
+              "| Metric | Progress |\n"
+              "|---|---:|\n"
+              f"| Problems Solved | {total} |\n"
+              f"| Easy | {counts['Easy']} |\n"
+              f"| Medium | {counts['Medium']} |\n"
+              f"| Hard | {counts['Hard']} |\n\n"
+          )
+
+          updated, replacements = re.subn(pattern, progress, text)
+
+          if replacements != 1:
+              raise SystemExit("Could not find exactly one Progress section.")
+
+          readme.write_text(updated, encoding="utf-8")
+          PY
+
+      - name: Commit updated README
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git diff --cached --quiet || git commit -m "Update DSA progress"
+          git push
