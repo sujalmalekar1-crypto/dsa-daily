@@ -1,2 +1,43 @@
-# dsa-daily
-My daily journey solving Data Structures and Algorithms problems
+# DSA Daily 
+
+My daily journey solving Data Structures and Algorithms
+problems to improve problem-solving skills.
+
+## Goals
+- Solve at least one DSA problem daily
+- Understand the logic behind every solution
+- Improve time and space complexity
+- Master DSA topics progressively
+
+## Topics
+- Arrays
+- Strings
+- Hashing
+- Two Pointers
+- Linked Lists
+- Stacks & Queues
+- Binary Search
+- Trees
+- Graphs
+- Recursion & Backtracking
+- Dynamic Programming
+
+## Language
+Python
+
+## Progress
+| Metric | Progress |
+|--------|----------|
+| Problems Solved | 0 |
+| Easy | 0 |
+| Medium | 0 |
+| Hard | 0 |
+
+## My Approach
+1. Understand the problem
+2. Attempt independently
+3. Develop the logic
+4. Write and test the code
+5. Analyze time and space complexity
+
+Consistency over perfection.
