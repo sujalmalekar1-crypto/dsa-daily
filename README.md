@@ -26,10 +26,11 @@ C++
 - Dynamic Programming
 
 ## Progress
+
 | Metric | Progress |
-|--------|----------|
-| Problems Solved | 0 |
-| Easy | 0 |
+|---|---:|
+| Problems Solved | 1 |
+| Easy | 1 |
 | Medium | 0 |
 | Hard | 0 |
 
