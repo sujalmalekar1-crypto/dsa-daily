@@ -9,6 +9,9 @@ problems to improve problem-solving skills.
 - Improve time and space complexity
 - Master DSA topics progressively
 
+## Language
+C++
+
 ## Topics
 - Arrays
 - Strings
@@ -21,9 +24,6 @@ problems to improve problem-solving skills.
 - Graphs
 - Recursion & Backtracking
 - Dynamic Programming
-
-## Language
-Python
 
 ## Progress
 | Metric | Progress |
