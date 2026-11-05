@@ -29,9 +29,9 @@ C++
 
 | Metric | Progress |
 |---|---:|
-| Problems Solved | 1 |
+| Problems Solved | 2 |
 | Easy | 1 |
-| Medium | 0 |
+| Medium | 1 |
 | Hard | 0 |
 
 ## My Approach
